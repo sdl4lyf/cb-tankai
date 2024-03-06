@@ -32,8 +32,8 @@ Maze* maze = NULL;
 bool gAlive = true;
 bool rAlive = true;
 
-const double ROTATION_SPEED = 240.0; // deg/s
-const double SPEED = 150.0; // p/s
+const double ROTATION_SPEED = 250.0; // deg/s
+const double SPEED = 180.0; // p/s
 const double ROTATION_CLAMP = 5.0;
 const Uint8* states = 0;
 Object* bullets[200];
@@ -112,10 +112,10 @@ void Keybinds() {
 
 			}
 			if (e.key.keysym.sym == SDLK_e) {
-				bullets[ind++] = new Object(LoadTexture(BULLET_PATH), redTank.rect.x +24 - cos(-D2R * (redTank.rotation)), redTank.rect.y + sin(-D2R * (redTank.rotation)), 8, 8, ClampRotation(-redTank.rotation, ROTATION_CLAMP));
+				bullets[ind++] = new Object(LoadTexture(BULLET_PATH), redTank.rect.x +24 - cos(D2R * (redTank.rotation)), redTank.rect.y + sin(D2R * (redTank.rotation)), 8, 8, ClampRotation(-redTank.rotation, ROTATION_CLAMP));
 			}
 			if (e.key.keysym.sym == SDLK_u) {
-				bullets[ind++] = new Object(LoadTexture(BULLET_PATH), greenTank.rect.x + 24 - cos(-D2R * (greenTank.rotation)), greenTank.rect.y + sin(-D2R * (greenTank.rotation)), 8, 7, ClampRotation(-greenTank.rotation, ROTATION_CLAMP));
+				bullets[ind++] = new Object(LoadTexture(BULLET_PATH), greenTank.rect.x + 24 - cos(D2R * (greenTank.rotation)), greenTank.rect.y + sin(D2R * (greenTank.rotation)), 8, 7, ClampRotation(-greenTank.rotation, ROTATION_CLAMP));
 			}
 		}
 	}
